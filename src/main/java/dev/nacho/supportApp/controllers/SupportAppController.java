@@ -2,26 +2,32 @@ package dev.nacho.supportApp.controllers;
 
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.nacho.supportApp.models.SupportApp;
-import dev.nacho.supportApp.services.SupportAppService;
+import dev.nacho.supportApp.models.Request;
+import dev.nacho.supportApp.services.RequestService;
 
 
 @RestController
 public class SupportAppController {
 
-    private SupportAppService services;
+    private RequestService services;
 
-    public SupportAppController(SupportAppService services) {
+    public SupportAppController(RequestService services) {
         this.services = services;
     }
 
     @GetMapping(path = "/supportapps")
-    public List<SupportApp> index() {
+    public List<Request> index() {
 
         return services.getAll();
 
     }
 
+    // @PostMapping ...crear
+
+
+    // @PutMapping actualizar
 }

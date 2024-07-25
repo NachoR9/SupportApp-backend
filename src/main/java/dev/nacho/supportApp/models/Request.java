@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "requests")
-public class SupportApp {
+public class Request {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,10 +18,10 @@ public class SupportApp {
 
     private String name;
 
-    public SupportApp() {
+    public Request() {
     }
 
-    public SupportApp(Long id, String name) {
+    public Request(Long id, String name) {
         this.id = id;
         this.name = name;
     }
