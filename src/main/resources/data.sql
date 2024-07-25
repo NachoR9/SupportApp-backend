@@ -1,5 +1,4 @@
-INSERT INTO requests (id_request, name) VALUES (default, 'USA');
-INSERT INTO requests (id_request, name) VALUES (default, 'France');
-INSERT INTO requests (id_request, name) VALUES (default, 'Ucrania');
-INSERT INTO requests (id_request, name) VALUES (default, 'Italy');
-INSERT INTO requests (id_request, name) VALUES (default, 'Canada');
+INSERT INTO requests (id, name, date, topic, description) VALUES (default, 'Wifi down', '2024-06-03', 'Wifi', 'My wifi is not working, can you help me?');
+INSERT INTO requests (id, name, date, topic, description) VALUES (default, 'Vsc does not open', '2024-06-17', 'Vsc', 'I cannot open vsc, can you help me?');
+INSERT INTO requests (id, name, date, topic, description) VALUES (default, 'Java do not compiled', '2024-06-06', 'Java', 'Java do not compiled, can you help me?');
+INSERT INTO requests (id, name, date, topic, description) VALUES (default, 'VPN is not connecting', '2024-06-10', 'VPN', 'VPN is not connecting, can you help me?');

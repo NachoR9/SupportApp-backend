@@ -19,8 +19,8 @@ public class SupportAppController {
         this.services = services;
     }
 
-    @GetMapping(path = "/supportapps")
-    public List<Request> index() {
+    @GetMapping(path = "/requests")
+    public List<Request> getAll() {
 
         return services.getAll();
 

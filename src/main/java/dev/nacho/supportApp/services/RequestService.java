@@ -2,6 +2,7 @@ package dev.nacho.supportApp.services;
 
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import dev.nacho.supportApp.models.Request;
@@ -16,7 +17,7 @@ public class RequestService {
     }
 
     public List<Request> getAll() {
-        List<Request> requests = repository.findAll();
+        List<Request> requests = repository.findAll(Sort.by("date"));
         return requests;
     }
 }
