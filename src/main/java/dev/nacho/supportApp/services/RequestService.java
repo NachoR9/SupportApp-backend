@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import dev.nacho.supportApp.exceptions.RequestNotFoundException;
 import dev.nacho.supportApp.models.Request;
 import dev.nacho.supportApp.repositories.RequestRepository;
 
@@ -13,7 +14,7 @@ import dev.nacho.supportApp.repositories.RequestRepository;
 public class RequestService {
     RequestRepository repository;
 
-    public RequestService(RequestRepository repository){
+    public RequestService(RequestRepository repository) {
         this.repository = repository;
     }
 
@@ -24,11 +25,18 @@ public class RequestService {
 
     public Request createRequest(Request request) {
         return repository.save(request);
-        
+
     }
-    
-    public Optional<Request> getRequest(Long id){
+
+    public Optional<Request> getRequest(Long id) {
         return repository.findById(id);
     }
 
+    public Request updateRequest(Request request) {
+        if (!repository.existsById(request.getId())) {
+            throw new RequestNotFoundException();
+
+        }
+        return repository.save(request);
+    }
 }
